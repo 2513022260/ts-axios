@@ -1,18 +1,49 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <button @click="methodGet">Method Get</button>
+    <button @click="methodPost">Method Post</button>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import axios from '@/axios/index'
 
 export default defineComponent({
-  name: 'HomeView',
-  components: {
-    HelloWorld,
-  },
+  setup() {
+    // GET
+    const methodGet = () => {
+      axios({
+        method: 'get',
+        url: '/api/base/get',
+        params: {
+          a: 1,
+          b: 2
+        }
+      })
+    }
+    // POST
+    const methodPost = () => {
+      axios({
+        method: 'post',
+        url: '/api/base/post',
+        data: {
+          a: 1,
+          b: 2
+        }
+      })
+    }
+
+    return {
+      methodGet,
+      methodPost
+    }
+  }
 });
 </script>
+
+<style lang="stylus" scoped>
+.home
+  button + button
+    margin-left 20px
+</style>
