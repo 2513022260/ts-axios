@@ -5,7 +5,8 @@ Axios 是一个基于 `promise` 网络请求库，作用于`node.js` 和浏览�
 ## 前言
 
 检验学习成果最直接的方式就是造论子。  
-最近刚换工作，项目使用的是`TypeScript`。学习之后，干脆造个轮子。网上看到很多`axios`相关的轮子，使用`TypeScript`造一个`axios`的轮子。
+最近刚换工作，项目使用的是`TypeScript`。学习之后，干脆造个轮子。网上看到很多`axios`相关的轮子，使用`TypeScript`造一个`axios`的轮子。  
+首先选择了`vue3 + TypeScript`，方便写客户端代码，用来测试客户端返回接口。
 
 ## 特性
 
