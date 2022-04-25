@@ -19,20 +19,52 @@ Axios 是一个基于 `promise` 网络请求库，作用于`node.js` 和浏览�
 - 自动转换 JSON 数据
 - 客户端支持防御 `XSRF`
 
+## 快速跳转
+- 使用Typescript重构Axios [链接](https://2513022260.github.io/blog/pages/1fda4a/)
+- 使用Typescript重构Axios--实现基础（一） [链接](https://2513022260.github.io/blog/pages/7feef0/)
+
 ## 项目目录
 
 项目分为客户端（vue部分）和服务端（server 文件夹）。客户端主要是用来检验重构功能的 demo，采用 TypeScript 按照模块化进行编写；服务端是用来响应 demo 中发出的请求，采用 koa 编写。  
 目录结构：
 
 ```
-├─ server             // 服务端
-└─ axios                // 源码目录
-    ├─ index.ts
-    ├─ xhr.ts
-    ├─ cancel
-    ├─ core
-    ├─ helpers
-    └─ types
+ts-axios
+├─ .browserslistrc
+├─ .eslintrc.js
+├─ .gitignore
+├─ babel.config.js
+├─ package-lock.json
+├─ package.json
+├─ public
+│  ├─ favicon.ico
+│  └─ index.html
+├─ README.md
+├─ server
+│  └─ index.ts
+├─ src
+│  ├─ App.vue
+│  ├─ assets
+│  │  └─ logo.png
+│  ├─ axios
+│  │  ├─ index.ts
+│  │  ├─ types
+│  │  │  └─ index.ts
+│  │  └─ xhr.ts
+│  ├─ components
+│  ├─ main.ts
+│  ├─ router
+│  │  └─ index.ts
+│  ├─ shims-vue.d.ts
+│  ├─ store
+│  │  └─ index.ts
+│  └─ views
+│     ├─ AboutView.vue
+│     └─ HomeView.vue
+├─ tsconfig.json
+├─ vue.config.js
+└─ yarn.lock
+
 ```
 
 ## 项目运行
