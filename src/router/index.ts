@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-const HomeView = () => import(/* webpackChunkName: "about" */ '../views/HomeView.vue')
-const AboutView = () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+
+const HomeView = () => import(/* webpackChunkName: "home" */ '../views/HomeView.vue')
+const GetView = () => import(/* webpackChunkName: "get" */ '../views/GetView.vue')
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -9,9 +10,9 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    component: AboutView
+    path: '/get',
+    name: 'get',
+    component: GetView
   }
 ]
 
