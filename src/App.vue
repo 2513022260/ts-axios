@@ -4,20 +4,18 @@
       <h1>使用Typescript重构Axios</h1>
     </div>
     <div class="page-content">
-      <LeftMenu class="page-menu" />
+      <MenuList class="page-menu" />
       <router-view class="page-main"/>
     </div>
-    
   </div>
-  
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import LeftMenu from './components/LeftMenu'
+import MenuList from '@/components/MenuList.vue'
 
 export default defineComponent({
-  components: { LeftMenu }
+  components: { MenuList }
 })
 </script>
 
@@ -89,4 +87,8 @@ button
   background-color #fff
   border-radius 5px
   overflow hidden
+
+.home
+  button + button
+    margin-left 20px
 </style>

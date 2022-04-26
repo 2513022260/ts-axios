@@ -43,7 +43,4 @@ export default defineComponent({
 </script>
 
 <style lang="stylus" scoped>
-.home
-  button + button
-    margin-left 20px
 </style>

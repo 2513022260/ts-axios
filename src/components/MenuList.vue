@@ -11,7 +11,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 export default defineComponent({
-  name: 'leftMenu',
   setup() {
     const menu = [
       { name: 'home', label: '实现基础（一）' },
