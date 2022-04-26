@@ -45,6 +45,7 @@ a
   text-decoration none
   color #2c3e50
 button
+  margin-bottom 10px
   padding 5px 8px
   background-color #fff
   border 1px solid #ddd
@@ -91,4 +92,6 @@ button
 .home
   button + button
     margin-left 20px
+  button:last-child
+    margin-left 0
 </style>

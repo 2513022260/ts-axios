@@ -8,6 +8,7 @@
     <button @click="clickGetMethod(6)">参数为null或者undefined</button>
     <button @click="methodGetHash">URL含hash#</button>
     <button @click="methodGetParams">URL已存在参数</button>
+    <button @click="methodALlParams">全部参数</button>
   </div>
 </template>
 
@@ -83,12 +84,28 @@ export default defineComponent({
         },
       })
     }
+    // GET 所有类型
+    const methodALlParams = () => {
+      axios({
+        method: "get",
+        url: "/api/base/get?foo=123",
+        params: {
+          bar: "123",
+          arr: ['a', 'b'],
+          date: new Date(),
+          obj: { c: 1 },
+          isNull: null,
+          isUndefined: undefined
+        },
+      })
+    }
 
     return {
       methodGet,
       clickGetMethod,
       methodGetHash,
       methodGetParams,
+      methodALlParams
     }
   },
 })
