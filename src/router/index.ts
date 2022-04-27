@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
 const HomeView = () => import(/* webpackChunkName: "home" */ '../views/HomeView.vue')
 const GetView = () => import(/* webpackChunkName: "get" */ '../views/GetView.vue')
+const PostView = () => import(/* webpackChunkName: "post" */ '../views/PostView.vue')
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -13,6 +14,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/get',
     name: 'get',
     component: GetView
+  },
+  {
+    path: '/post',
+    name: 'post',
+    component: PostView
   }
 ]
 

@@ -1,7 +1,7 @@
 <template>
   <nav class="left-menu">
     <ul>
-      <li v-for="item in menu" :key="item.name">
+      <li :key="item.name" v-for="item in menu">
         <router-link :to="{ name: item.name } ">{{ item.label }}</router-link>
       </li>
     </ul>
@@ -9,18 +9,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue"
 export default defineComponent({
   setup() {
     const menu = [
-      { name: 'home', label: '实现基础（一）' },
-      { name: 'get', label: '处理GET请求的URL参数（二）' }
+      { name: "home", label: "实现基础（一）" },
+      { name: "get", label: "处理GET请求的URL参数（二）" },
+      { name: "post", label: "处理POST请求参数（三）" },
     ]
 
     return {
-      menu
+      menu,
     }
-  }
+  },
 })
 </script>
 
@@ -42,7 +43,6 @@ li
     &:hover
       color #fff
       background-color var(--themeColor)
-
 .router-link-active
   color #fff
   background-color var(--themeColor)

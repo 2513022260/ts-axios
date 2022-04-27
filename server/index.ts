@@ -18,11 +18,11 @@ router.get('/api/base/get', async (ctx, next) => {
 })
 // router
 router.post('/api/base/post', async (ctx, next) => {
-  ctx.response.body = `<h1>POST 请求</h1>`
+  ctx.response.body = ctx.request.body
 })
 
-// 需先引用bodyparser
-app.use(router.routes())
+// 需先注意先引用bodyparser、否则不起作用
+app.use(bodyparser).use(router.routes())
 
 const prot = 9000
 app.listen(prot)
