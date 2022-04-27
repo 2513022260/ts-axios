@@ -92,6 +92,4 @@ button
 .home
   button + button
     margin-left 20px
-  button:last-child
-    margin-left 0
 </style>

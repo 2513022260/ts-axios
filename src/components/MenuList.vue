@@ -16,6 +16,7 @@ export default defineComponent({
       { name: "home", label: "实现基础（一）" },
       { name: "get", label: "处理GET请求的URL参数（二）" },
       { name: "post", label: "处理POST请求参数（三）" },
+      { name: "postHeader", label: "处理请求头header（四）" },
     ]
 
     return {

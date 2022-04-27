@@ -91,11 +91,11 @@ export default defineComponent({
         url: "/api/base/get?foo=123",
         params: {
           bar: "123",
-          arr: ['a', 'b'],
+          arr: ["a", "b"],
           date: new Date(),
           obj: { c: 1 },
           isNull: null,
-          isUndefined: undefined
+          isUndefined: undefined,
         },
       })
     }
@@ -105,10 +105,14 @@ export default defineComponent({
       clickGetMethod,
       methodGetHash,
       methodGetParams,
-      methodALlParams
+      methodALlParams,
     }
   },
 })
 </script>
 
-<style lang="stylus" scoped></style>
+<style lang="stylus" scoped>
+.home
+  button:last-child
+    margin-left 0
+</style>
