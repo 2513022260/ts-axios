@@ -33,3 +33,23 @@ export function normalizeHeaderName(
     }
   })
 }
+
+// 处理返回headers
+export function parseHeaders(headers: string): any {
+  // 创建一个干净的对象
+  const res = Object.create(null)
+  // 截取 \r\n
+  headers.split('\r\n').forEach(line => {
+    let [key, val] = line.split(':')
+    key = key.trim().toLowerCase()
+    if (!key) {
+      return
+    }
+    if (val) {
+      val = val.trim()
+    }
+
+    res[key] = val
+  })
+  return res
+}
