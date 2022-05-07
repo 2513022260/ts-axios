@@ -1,15 +1,17 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
-const HomeView = () => import(/* webpackChunkName: "home" */ '../views/HomeView.vue')
+const BaseView = () => import(/* webpackChunkName: "base" */ '../views/BaseView.vue')
 const GetView = () => import(/* webpackChunkName: "get" */ '../views/GetView.vue')
 const PostView = () => import(/* webpackChunkName: "post" */ '../views/PostView.vue')
 const PostHeader = () => import(/* webpackChunkName: "post" */ '../views/PostHeader.vue')
+const ResponseView = () => import(/* webpackChunkName: "base" */ '../views/ResponseView.vue')
+const ErrorView = () => import(/* webpackChunkName: "base" */ '../views/ErrorView.vue')
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'base',
+    component: BaseView
   },
   {
     path: '/get',
@@ -25,6 +27,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/postHeader',
     name: 'postHeader',
     component: PostHeader
+  },
+  {
+    path: '/response',
+    name: 'response',
+    component: ResponseView
+  },
+  {
+    path: '/error',
+    name: 'error',
+    component: ErrorView
   }
 ]
 

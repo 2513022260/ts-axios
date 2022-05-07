@@ -1,12 +1,12 @@
 import xhr from './xhr'
-import { AxiosRequestConfig } from './types'
+import { AxiosRequestConfig, AxiosPromise } from './types'
 import { buildURL } from './helpers/url'
 import { transformRequest } from './helpers/data'
 import { processHeaders } from './helpers/headers'
 
-export default function Axios(config: AxiosRequestConfig) {
+export default function Axios(config: AxiosRequestConfig): AxiosPromise  {
   processCofing(config)
-  xhr(config)
+  return xhr(config)
 }
 
 // 用来处理config

@@ -16,9 +16,11 @@ app.use(async (ctx, next) => {
 router.get('/api/base/get', async (ctx, next) => {
   ctx.response.body = `<h1>GET 请求</h1>`
 })
-// router
 router.post('/api/base/post', async (ctx, next) => {
   ctx.response.body = ctx.request.body
+})
+router.post('/api/base/postResponse', async (ctx, next) => {
+  ctx.body = ctx.request.body
 })
 
 // 需先注意先引用bodyparser、否则不起作用

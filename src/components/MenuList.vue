@@ -13,10 +13,12 @@ import { defineComponent } from "vue"
 export default defineComponent({
   setup() {
     const menu = [
-      { name: "home", label: "实现基础（一）" },
+      { name: "base", label: "实现基础（一）" },
       { name: "get", label: "处理GET请求的URL参数（二）" },
       { name: "post", label: "处理POST请求参数（三）" },
       { name: "postHeader", label: "处理请求头header（四）" },
+      { name: "response", label: "处理响应数据（五）" },
+      // { name: "error", label: "异常处理（九）" }
     ]
 
     return {
