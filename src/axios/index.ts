@@ -1,12 +1,14 @@
 import xhr from './xhr'
-import { AxiosRequestConfig, AxiosPromise } from './types'
+import { AxiosRequestConfig, AxiosPromise, AxiosResponse } from './types'
 import { buildURL } from './helpers/url'
-import { transformRequest } from './helpers/data'
+import { transformRequest, transformResponse } from './helpers/data'
 import { processHeaders } from './helpers/headers'
 
 export default function Axios(config: AxiosRequestConfig): AxiosPromise  {
   processCofing(config)
-  return xhr(config)
+  return xhr(config).then(res => {
+    return transformResponseData(res)
+  })
 }
 
 // 用来处理config
@@ -29,4 +31,9 @@ function transformRequestData(config: AxiosRequestConfig): any {
 function transformHeaders(config: AxiosRequestConfig): any {
   const { headers = {}, data } = config
   return processHeaders(headers, data)
+}
+// 用来处理返回data
+function transformResponseData(res: AxiosResponse): any {
+  res.data = transformResponse(res.data)
+  return res
 }
