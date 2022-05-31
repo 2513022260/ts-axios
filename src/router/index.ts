@@ -5,7 +5,8 @@ const GetView = () => import(/* webpackChunkName: "get" */ '../views/GetView.vue
 const PostView = () => import(/* webpackChunkName: "post" */ '../views/PostView.vue')
 const PostHeader = () => import(/* webpackChunkName: "post" */ '../views/PostHeader.vue')
 const ResponseView = () => import(/* webpackChunkName: "base" */ '../views/ResponseView.vue')
-const ErrorView = () => import(/* webpackChunkName: "base" */ '../views/ErrorView.vue')
+const ResponseHeaderAndData = () => import(/* webpackChunkName: "base" */ '../views/ResponseView.vue')
+const ExceptionView = () => import(/* webpackChunkName: "base" */ '../views/ExceptionView.vue')
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -34,9 +35,14 @@ const routes: Array<RouteRecordRaw> = [
     component: ResponseView
   },
   {
-    path: '/error',
-    name: 'error',
-    component: ErrorView
+    path: '/responseHeaderAndData',
+    name: 'responseHeaderAndData',
+    component: ResponseHeaderAndData
+  },
+  {
+    path: '/exception',
+    name: 'exception',
+    component: ExceptionView
   }
 ]
 
