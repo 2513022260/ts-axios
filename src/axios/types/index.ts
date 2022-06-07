@@ -35,3 +35,10 @@ export interface AxiosResponse {
 }
 // axios promise接口 继承于 Promise<AxiosResponse> 泛型接口
 export interface AxiosPromise extends Promise<AxiosResponse> {}
+// axios 异常信息
+export interface AxiosError extends Error {
+  config: AxiosRequestConfig // 请求配置
+  code?: string | null | number
+  request?: any // 请求的 XMLHttpRequest 对象实例
+  response: AxiosResponse // 返回 response接口
+}

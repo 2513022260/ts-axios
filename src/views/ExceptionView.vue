@@ -35,6 +35,10 @@ export default defineComponent({
         })
         .catch((e) => {
           console.log("url error", e)
+          console.log("url error", e.message)
+          console.log("url error", e.config)
+          console.log("url error", e.code)
+          console.log("url error", e.request)
         })
     }
     const clickNetError = () => {
