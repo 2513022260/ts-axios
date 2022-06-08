@@ -19,7 +19,8 @@ export default defineComponent({
       { name: "postHeader", label: "处理请求头header（四）" },
       { name: "response", label: "处理响应数据（五）" },
       { name: "responseHeaderAndData", label: "处理响应 header 和 data（六）" },
-      { name: "exception", label: "异常处理（七）" }
+      { name: "exception", label: "异常处理（七）" },
+      { name: "expandInterface", label: "扩展接口（八）" },
     ]
 
     return {

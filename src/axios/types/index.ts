@@ -16,12 +16,12 @@ export type Method =
   | 'PATCH'
 // axios config接口
 export interface AxiosRequestConfig {
-  url: string
+  url?: string
   method?: string
   headers?: any
   data?: any
   params?: any
-  responseType?: XMLHttpRequestResponseType,
+  responseType?: XMLHttpRequestResponseType
   timeout?: number
 }
 // axios response接口
@@ -41,4 +41,19 @@ export interface AxiosError extends Error {
   code?: string | null | number
   request?: any // 请求的 XMLHttpRequest 对象实例
   response: AxiosResponse // 返回 response接口
+}
+// axios 类型接口
+export interface Axios {
+  request(config: AxiosRequestConfig): AxiosPromise
+  get(url: string, config?: AxiosRequestConfig): AxiosPromise
+  delete(url: string, config?: AxiosRequestConfig): AxiosPromise
+  head(url: string, config?: AxiosRequestConfig): AxiosPromise
+  options(url: string, config?: AxiosRequestConfig): AxiosPromise
+  post(url: string, data?: any, config?: AxiosRequestConfig): AxiosPromise
+  put(url: string, data?: any, config?: AxiosRequestConfig): AxiosPromise
+  patch(url: string, data?: any, config?: AxiosRequestConfig): AxiosPromise
+}
+export interface AxiosInstance extends Axios {
+  (config: AxiosRequestConfig): AxiosPromise
+  (url: string, config?: AxiosRequestConfig): AxiosPromise
 }

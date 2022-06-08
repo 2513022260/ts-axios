@@ -16,7 +16,22 @@ app.use(async (ctx, next) => {
 router.get('/api/base/get', async (ctx, next) => {
   ctx.response.body = `<h1>GET 请求</h1>`
 })
+router.options('/api/base/options', async (ctx, next) => {
+  ctx.response.body = `<h1>options 请求</h1>`
+})
+router.delete('/api/base/delete', async (ctx, next) => {
+  ctx.response.body = `<h1>delete 请求</h1>`
+})
+router.head('/api/base/head', async (ctx, next) => {
+  ctx.response.body = `<h1>head 请求</h1>`
+})
 router.post('/api/base/post', async (ctx, next) => {
+  ctx.response.body = ctx.request.body
+})
+router.put('/api/base/put', async (ctx, next) => {
+  ctx.response.body = ctx.request.body
+})
+router.patch('/api/base/patch', async (ctx, next) => {
   ctx.response.body = ctx.request.body
 })
 router.post('/api/base/postResponse', async (ctx, next) => {

@@ -1,12 +1,21 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
-const BaseView = () => import(/* webpackChunkName: "base" */ '../views/BaseView.vue')
-const GetView = () => import(/* webpackChunkName: "get" */ '../views/GetView.vue')
-const PostView = () => import(/* webpackChunkName: "post" */ '../views/PostView.vue')
-const PostHeader = () => import(/* webpackChunkName: "post" */ '../views/PostHeader.vue')
-const ResponseView = () => import(/* webpackChunkName: "base" */ '../views/ResponseView.vue')
-const ResponseHeaderAndData = () => import(/* webpackChunkName: "base" */ '../views/ResponseView.vue')
-const ExceptionView = () => import(/* webpackChunkName: "base" */ '../views/ExceptionView.vue')
+const BaseView = () =>
+  import(/* webpackChunkName: "base" */ '../views/BaseView.vue')
+const GetView = () =>
+  import(/* webpackChunkName: "get" */ '../views/GetView.vue')
+const PostView = () =>
+  import(/* webpackChunkName: "post" */ '../views/PostView.vue')
+const PostHeader = () =>
+  import(/* webpackChunkName: "post" */ '../views/PostHeader.vue')
+const ResponseView = () =>
+  import(/* webpackChunkName: "base" */ '../views/ResponseView.vue')
+const ResponseHeaderAndData = () =>
+  import(/* webpackChunkName: "base" */ '../views/ResponseView.vue')
+const ExceptionView = () =>
+  import(/* webpackChunkName: "base" */ '../views/ExceptionView.vue')
+const ExpandInterface = () =>
+  import(/* webpackChunkName: "base" */ '../views/ExpandInterface.vue')
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -43,6 +52,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/exception',
     name: 'exception',
     component: ExceptionView
+  },
+  {
+    path: '/expandInterface',
+    name: 'expandInterface',
+    component: ExpandInterface
   }
 ]
 

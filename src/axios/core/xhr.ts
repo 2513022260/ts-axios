@@ -1,6 +1,6 @@
-import { AxiosRequestConfig, AxiosPromise, AxiosResponse } from './types'
-import { parseHeaders } from './helpers/headers'
-import { createError } from './helpers/error'
+import { AxiosRequestConfig, AxiosPromise, AxiosResponse } from '../types'
+import { parseHeaders } from '../helpers/headers'
+import { createError } from '../helpers/error'
 
 export default function (config: AxiosRequestConfig): AxiosPromise {
   return new Promise((resolve, reject) => {
@@ -15,7 +15,7 @@ export default function (config: AxiosRequestConfig): AxiosPromise {
     // 1. 创建 XMLHttpRequest 异步对象
     const xhr = new XMLHttpRequest()
     // 2. 配置请求参数
-    xhr.open(method.toUpperCase(), url, true)
+    xhr.open(method.toUpperCase(), url!, true)
 
     Object.keys(headers).forEach(name => {
       // data = null header是没意义的 直接删掉
